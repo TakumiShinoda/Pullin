@@ -71,3 +71,12 @@ h1, p{
   background-color: rgb(255, 255, 255);
   padding: 5px;
 }
+
+#horizontalList{
+  margin: 0;
+}
+
+#listItem{
+  display: inline-block;
+  width: 30%;
+}
