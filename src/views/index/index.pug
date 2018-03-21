@@ -2,20 +2,24 @@ include ../_header.pug
   div#header(width="100%")
     h1 Pullin
   div#menu(width="100%")
-    p menu
+    ul#horizontalList
+      li#listItem(style="width:13%") Menu
+      li#listItem(style="width:10%") Home
+      li#listItem(style="width:10%") 追加
+      li#listItem(style="width:10%") 管理
   div#contents(width="100%")
     div#main
       div#mainTitle
-        p Table Name
+        p 管理
       div#mainTop
         p Search
       div#mainHeader
         ul#horizontalList
-          li#listItem URL
-          li#listItem サイト名
-          li#listItem 最終アクセス
+          li#listItem(style="width:30%") URL
+          li#listItem(style="width:30%") サイト名
+          li#listItem(style="width:30%") 最終アクセス
       div#mainList
         ul#horizontalList
-          li#listItem http://www.hogehoge.com
-          li#listItem hogehoge
-          li#listItem 昨日
+          li#listItem(style="width:30%") http://www.hogehoge.com
+          li#listItem(style="width:30%") hogehoge
+          li#listItem(style="width:30%") 昨日

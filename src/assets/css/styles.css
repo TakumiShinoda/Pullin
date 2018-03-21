@@ -13,14 +13,15 @@ h1, p{
 }
 
 #header{
-  color: rgb(255, 255, 255);
+  color: rgb(82, 45, 39);
   background-color: rgb(228, 165, 56);
   margin: 0;
   padding: 5px;
+  font-style: oblique;
 }
 
 #menu{
-  color: rgb(255, 255, 255);
+  color: rgb(228, 165, 56);
   background-color: rgb(82, 45, 39);
   margin: 0;
   padding: 5px;
@@ -78,5 +79,4 @@ h1, p{
 
 #listItem{
   display: inline-block;
-  width: 30%;
 }
