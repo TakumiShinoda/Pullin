@@ -40,7 +40,7 @@ h1, p{
 
 #mainTitle{
   color: rgb(200, 200, 200);
-  font-size: 50px;
+  font-size: 45px;
   margin: 40px 0px 20px 0px;
 }
 
@@ -79,4 +79,10 @@ h1, p{
 
 #listItem{
   display: inline-block;
+}
+
+#searchBox{
+   border:none;
+   color:rgb(122,122,122);
+   outline: 0;
 }
