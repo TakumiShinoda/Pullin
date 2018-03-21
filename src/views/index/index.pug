@@ -4,23 +4,9 @@ include ../_header.pug
   div#menu(width="100%")
     ul#horizontalList
       li#listItem(style="width:13%") Menu
-      li#listItem.hover(style="width:10%") Home
-      li#listItem.hover(style="width:10%") 追加
-      li#listItem.hover(style="width:10%") 管理
-  div#contents(width="100%")
-    div#main
-      div#mainTitle
-        p 管理
-      div#mainTop
-        input#searchBox(type="text" style="font-size:20px;" value="Search")
-      div#mainHeader
-        ul#horizontalList
-          li#listItem(style="width:30%") URL
-          li#listItem(style="width:30%") サイト名
-          li#listItem(style="width:30%") 最終アクセス
-      div#mainList
-        ul#horizontalList
-          li#listItem(style="width:30%")
-            a(href="http://www.hogehoge.com") http://www.hogehoge.com
-          li#listItem(style="width:30%") hogehoge
-          li#listItem(style="width:30%") 昨日
+      li#listItem.hover.menuSelector(style="width:10%" name="home") Home
+      li#listItem.hover.menuSelector(style="width:10%" name="add") 追加
+      li#listItem.hover.menuSelector(style="width:10%" name="manage") 管理
+  include _manage.pug
+  include _add.pug
+  include _home.pug
