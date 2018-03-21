@@ -15,6 +15,7 @@ h1, p{
 #header{
   color: rgb(82, 45, 39);
   background-color: rgb(228, 165, 56);
+  font-size: 20px;
   margin: 0;
   padding: 5px;
   font-style: oblique;
@@ -82,7 +83,11 @@ h1, p{
 }
 
 #searchBox{
-   border:none;
-   color:rgb(122,122,122);
-   outline: 0;
+  border:none;
+  color:rgb(122,122,122);
+  outline: 0;
+}
+
+.hover:hover{
+  opacity: 0.8;
 }
