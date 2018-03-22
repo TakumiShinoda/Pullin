@@ -7,6 +7,7 @@ include ../_header.pug
       li#listItem.hover.menuSelector(style="width:10%" name="home") Home
       li#listItem.hover.menuSelector(style="width:10%" name="add") 追加
       li#listItem.hover.menuSelector(style="width:10%" name="manage") 管理
-  include _manage.pug
-  include _add.pug
-  include _home.pug
+  div#contents
+    include _manage.pug
+    include _add.pug
+    include _home.pug
