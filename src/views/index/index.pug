@@ -4,9 +4,12 @@ include ../_header.pug
   div#menu(width="100%")
     ul#horizontalList
       li#listItem(style="width:13%") Menu
-      li#listItem.hover.menuSelector(style="width:10%" name="home") Home
-      li#listItem.hover.menuSelector(style="width:10%" name="add") 追加
-      li#listItem.hover.menuSelector(style="width:10%" name="manage") 管理
+      li#listItem(style="width:10%")
+        span.pointer.hover.menuSelector(name="home") Home
+      li#listItem(style="width:10%")
+        span.pointer.hover.menuSelector(name="add") 追加
+      li#listItem(style="width:10%") 
+        span.pointer.hover.menuSelector(name="manage") 管理
   div#contents
     include _manage.pug
     include _add.pug
