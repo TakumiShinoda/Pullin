@@ -3,7 +3,7 @@ const electron = require('electron');
 electron.app.on('ready', () => {
   mainWindow = new electron.BrowserWindow({
     width: 1280,
-    height: 960,
+    height: 800,
     resizable: false,
     movable: true,
   });

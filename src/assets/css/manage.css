@@ -3,12 +3,6 @@
   margin: auto;
 }
 
-#mainTitle{
-  color: rgb(200, 200, 200);
-  font-size: 45px;
-  margin: 40px 0px 20px 0px;
-}
-
 #mainTop{
   border: 1px solid;
   border-top-left-radius: 5px;

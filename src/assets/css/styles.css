@@ -40,10 +40,20 @@ h1, p{
   margin: 0;
 }
 
+.mainTitle{
+  color: rgb(200, 200, 200);
+  font-size: 38px;
+  margin: 40px 0px 20px 0px;
+}
+
 .hover:hover{
   opacity: 0.8;
 }
 
 .pointer{
   cursor: pointer;
+}
+
+.horizontalItem{
+  display: inline-block;
 }
