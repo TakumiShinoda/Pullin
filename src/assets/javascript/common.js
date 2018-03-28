@@ -7,10 +7,19 @@ $(document).ready(() => {
   var webview = document.getElementById('searchView');
 
   webview.openDevTools();
-  webview.addEventListener('did-finish-load', () => {
-    $.get('../../js/index/webviewResources/webview.js', (text) => {
+
+  webview.addEventListener('dom-ready', () => {
+    $.get('../../js/index/webviewResources/beforeLoad.js', (text) => {
       webview.executeJavaScript(text, false, () => {
-        console.log("suc");
+        console.log("before load");
+      });
+    });
+  });
+
+  webview.addEventListener('did-finish-load', () => {
+    $.get('../../js/index/webviewResources/afterLoad.js', (text) => {
+      webview.executeJavaScript(text, false, () => {
+        console.log("load finished");
       });
     });
   });
