@@ -5,14 +5,14 @@ $(document).ready(() => {
   });
 
   var webview = document.getElementById('searchView');
-  console.log($('#searchView'));
 
   webview.openDevTools();
   webview.addEventListener('did-finish-load', () => {
-    console.log('fin')
-    webview.executeJavaScript('console.log($(":hover"));', false, () => {
-      console.log("suc");
-    })
+    $.get('../../js/index/webviewResources/webview.js', (text) => {
+      webview.executeJavaScript(text, false, () => {
+        console.log("suc");
+      });
+    });
   });
 });
 
