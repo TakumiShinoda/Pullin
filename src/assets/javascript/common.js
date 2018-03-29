@@ -6,7 +6,7 @@ $(document).ready(() => {
 
   var webview = document.getElementById('searchView');
 
-  webview.openDevTools();
+  // webview.openDevTools();
 
   webview.addEventListener('dom-ready', () => {
     $.get('../../js/index/webviewResources/beforeLoad.js', (text) => {
