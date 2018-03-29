@@ -24,8 +24,10 @@ gulp.task('pug_compile', () => {
 gulp.task('asset_copy', () => {
   gulp.src(['src/assets/javascript/node_dependencies.js'], {base: 'src/assets/javascript'})
   .pipe(gulp.dest('./dist/js'));
-  gulp.src(['src/assets/javascript/index/webviewResources/*'], {base: 'src/assets/javascript/index/webviewResources'})
-  .pipe(gulp.dest('./dist/js/index/webviewResources'));
+  gulp.src(['src/assets/javascript/index/webviewResources/addWebView/*'], {base: 'src/assets/javascript/index/webviewResources/addWebView'})
+  .pipe(gulp.dest('./dist/js/index/webviewResources/addWebView'));
+  gulp.src(['src/assets/javascript/index/webviewResources/newsWebView/*'], {base: 'src/assets/javascript/index/webviewResources/newsWebView'})
+  .pipe(gulp.dest('./dist/js/index/webviewResources/newsWebView'));
 });
 
 gulp.task('build_dist', () => {
