@@ -9,14 +9,14 @@ $(document).ready(() => {
       n.addEventListener('dom-ready', () => {
         $.get('../../js/index/webviewResources/newsWebView/beforeLoad.js', (text) => {
           n.executeJavaScript(text, false, () => {
-            console.log("before load");
+            // console.log("before load");
           });
         });
       });
       n.addEventListener('did-finish-load', () => {
         $.get('../../js/index/webviewResources/newsWebView/afterLoad.js', (text) => {
           n.executeJavaScript(text, false, () => {
-            console.log("load finished");
+            // console.log("load finished");
           });
         });
       });

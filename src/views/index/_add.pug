@@ -1,2 +1,14 @@
 div.contents.add(style="display:none;")
-  webview#searchView(src="http://www.gooogle.com")
+  webview#searchView(src="http://www.gooogle.com" nodeIntegration="true")
+  div#addFooter
+    ul#horizontalList.addFooterList
+      li#listItem.addFooterMenu
+        span.hover.pointer 戻る
+      li#listItem.addFooterMenu 
+        span.hover.pointer 進む
+      li#listItem.addFooterMenu
+        span.hover.pointer ホーム
+      li#listItem.addFooterMenu 
+        span.hover.pointer 履歴
+      li#listItem.addFooterMenu
+        span#modeChange.hover.pointer モード 
