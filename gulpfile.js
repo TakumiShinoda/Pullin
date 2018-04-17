@@ -28,6 +28,8 @@ gulp.task('asset_copy', () => {
   .pipe(gulp.dest('./dist/js/index/webviewResources/addWebView'));
   gulp.src(['src/assets/javascript/index/webviewResources/newsWebView/*'], {base: 'src/assets/javascript/index/webviewResources/newsWebView'})
   .pipe(gulp.dest('./dist/js/index/webviewResources/newsWebView'));
+  gulp.src(['src/assets/images/*'], {base: 'src/assets/images'})
+  .pipe(gulp.dest('./dist/images'));
 });
 
 gulp.task('build_dist', () => {

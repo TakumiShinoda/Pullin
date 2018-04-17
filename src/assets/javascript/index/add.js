@@ -42,6 +42,5 @@ $(document).ready(() => {
 
   $('#home').on('click', (ev) => {
     $('#searchView')[0].src = 'http://www.google.com';
-    console.log('hogehoge');
   });
 });
