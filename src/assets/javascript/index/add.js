@@ -39,4 +39,9 @@ $(document).ready(() => {
   $('#modeChange').on('click', (ev) => {
     webview.send('modeChange', 'hogehoge');
   });
+
+  $('#home').on('click', (ev) => {
+    $('#searchView')[0].src = 'http://www.google.com';
+    console.log('hogehoge');
+  });
 });
