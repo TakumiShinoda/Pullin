@@ -15,7 +15,7 @@ switch(process.platform){
     break
 }
 app.commandLine.appendSwitch('ppapi-flash-path', path.join(__dirname, pluginName))
-app.commandLine.appendSwitch('ppapi-flash-version', '17.0.0.169')
+app.commandLine.appendSwitch('ppapi-flash-version', '	29.0.0.140')
 
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
