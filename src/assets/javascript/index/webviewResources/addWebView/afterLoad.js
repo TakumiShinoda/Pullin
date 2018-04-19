@@ -1,5 +1,4 @@
 console.log('load finished');
-const ipc = require('electron').ipcRenderer;
 
 var mode = false;
 var tags = document.getElementsByTagName("*");
@@ -25,3 +24,5 @@ ipc.on('modeChange', () => {
   mode = !mode;
   ipc.sendToHost('modeSync', mode);
 });
+
+ipc.sendToHost('finishedLoad', true);

@@ -1,5 +1,8 @@
 div.contents.add(style="display:none;")
-  webview#searchView(src="http://www.gooogle.com" nodeIntegration="true")
+  div#browserArea
+    webview#searchView(src="http://www.gooogle.com" nodeIntegration="true")
+    div#loading
+      input(type="image" src="../../images/loadingTest.gif")
   div#addFooter
     ul#horizontalList.addFooterList
       li#listItem.addFooterMenu

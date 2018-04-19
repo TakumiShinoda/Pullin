@@ -33,6 +33,13 @@ $(document).ready(() => {
           targetStyle.color = 'rgb(0, 0, 0)';
         }
         break;
+      case 'finishedLoad':
+        $('#searchView')[0].style.display = '';
+        $('#loading')[0].style.display = 'none';
+        break;
+      default:
+        console.log('recieve unknown task');
+        break;
     }
   });
 
@@ -41,6 +48,8 @@ $(document).ready(() => {
   });
 
   $('#home').on('click', (ev) => {
+    $('#searchView')[0].style.display = 'none';
+    $('#loading')[0].style.display = '';
     $('#searchView')[0].src = 'http://www.google.com';
   });
 });
