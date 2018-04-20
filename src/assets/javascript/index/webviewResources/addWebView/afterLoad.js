@@ -22,6 +22,11 @@ for(var i = 0; i < tags.length; i++){
 
 ipc.on('modeChange', () => {
   mode = !mode;
+  if(!mode){
+    for(var i = 0; i < $('*').length; i++){
+      $('*')[i].style.backgroundColor = '';
+    }
+  }
   ipc.sendToHost('modeSync', mode);
 });
 
