@@ -52,4 +52,8 @@ $(document).ready(() => {
     $('#loading')[0].style.display = '';
     $('#searchView')[0].src = 'http://www.google.com';
   });
+
+  $('#updatePage').on('click', (ev) => {
+    webview.reloadPage();
+  });
 });
