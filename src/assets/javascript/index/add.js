@@ -1,4 +1,9 @@
 var mode = false;
+var urlTree = {
+  urls: [],
+  position: -1,
+  status: 'top'
+}
 
 $(document).ready(() => {
   var webview = document.getElementById('searchView');
@@ -33,6 +38,29 @@ $(document).ready(() => {
           targetStyle.color = 'rgb(0, 0, 0)';
         }
         break;
+      case 'moveSite':
+        var url = ev.args[0];
+        var urls = urlTree.urls;
+        var lastPos = urlTree.urls.length - 1;
+        var position = urlTree.position;
+        var status = urlTree.status;
+
+        if(status == "top"){
+          if(position < lastPos){
+            var diff = lastPos - position;
+
+            for(var i = 0; i < diff; i++){
+              urls.pop();
+            }
+          }
+          urls.push(url);
+          urlTree.position += 1;
+        }else if(status == "backed"){
+          urlTree.status = 'top';
+        }
+
+        console.log(urlTree);
+        break;
       case 'finishedLoad':
         $('#searchView')[0].style.display = '';
         $('#loading')[0].style.display = 'none';
@@ -55,5 +83,25 @@ $(document).ready(() => {
 
   $('#updatePage').on('click', (ev) => {
     webview.reloadPage();
+  });
+
+  $('#back').on('click', () => {
+    if(urlTree.position > 0){
+      urlTree.status = 'backed';
+      urlTree.position -= 1;
+      $('#searchView')[0].src = urlTree.urls[urlTree.position];
+    }else{
+      console.log('下')
+    }
+  });
+
+  $('#next').on('click', () => {
+    if(urlTree.position < urlTree.urls.length - 1){
+      urlTree.status = 'backed';
+      urlTree.position += 1;
+      $('#searchView')[0].src = urlTree.urls[urlTree.position];
+    }else{
+      console.log('上')
+    }
   });
 });
