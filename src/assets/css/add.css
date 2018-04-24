@@ -9,14 +9,14 @@
 }
 
 .addFooterMenu{
-  width: 18%;
+  width: 15%;
 }
 
 #browserArea{
   position: relative;
   width: 100%;
   height: 80%;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 #loading{
