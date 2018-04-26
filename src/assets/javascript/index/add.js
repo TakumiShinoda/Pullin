@@ -55,11 +55,33 @@ $(document).ready(() => {
           }
           urls.push(url);
           urlTree.position += 1;
+
+          storage.get('histories', (err, data) => {
+            var histUrl = data.histories.urls;
+            var histAccess = data.histories.access;
+
+            var now = new Date();
+            let year = now.getFullYear();
+            let month = now.getMonth() + 1;
+            let day = now.getDate();
+            let hour = now.getHours();
+            let minute = now.getMinutes();
+            let second = now.getSeconds();
+
+            if(err){throw err}
+            if(histUrl.indexOf(url) < 0){
+              histUrl.push(url);
+              histAccess.push(year + '_' + month + '_' + day + '_' + hour + '_' + minute + '_' + second);
+            }else{
+              histAccess[histUrl.indexOf(url)] = year + '_' + month + '_' + day + '_' + hour + '_' + minute + '_' + second;
+            }
+            storage.set('histories', data, (err) => {
+              if(err){throw err}
+            });
+          });
         }else if(status == "backed"){
           urlTree.status = 'top';
         }
-
-        console.log(urlTree);
         break;
       case 'finishedLoad':
         $('#searchView')[0].style.display = '';
@@ -90,8 +112,6 @@ $(document).ready(() => {
       urlTree.status = 'backed';
       urlTree.position -= 1;
       $('#searchView')[0].src = urlTree.urls[urlTree.position];
-    }else{
-      console.log('下')
     }
   });
 
@@ -100,8 +120,6 @@ $(document).ready(() => {
       urlTree.status = 'backed';
       urlTree.position += 1;
       $('#searchView')[0].src = urlTree.urls[urlTree.position];
-    }else{
-      console.log('上')
     }
   });
 });
