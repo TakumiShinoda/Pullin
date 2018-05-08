@@ -122,4 +122,8 @@ $(document).ready(() => {
       $('#searchView')[0].src = urlTree.urls[urlTree.position];
     }
   });
+
+  $('#history').on('click', () => {
+    webview.src = "histories.html";
+  });
 });

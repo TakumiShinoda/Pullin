@@ -1,6 +1,7 @@
 @import 'manage.css';
 @import 'add.css';
 @import 'home.css';
+@import 'histories.css';
 
 body{
   width: 100%;
