@@ -4,19 +4,16 @@ $(document).ready(() => {
   for(var i = 0; i < newsWebViews.length; i++){
     var viewResize = new Promise((rs, rj) => {
       var n = newsWebViews[i];
-      // n.openDevTools();
       n.src = 'http://www.gooogle.com';
       n.addEventListener('dom-ready', () => {
-        $.get('../../js/index/webviewResources/newsWebView/beforeLoad.js', (text) => {
+        $.get(jsPath('/index/webviewResources/newsWebView/beforeLoad.js'), (text) => {
           n.executeJavaScript(text, false, () => {
-            // console.log("before load");
           });
         });
       });
       n.addEventListener('did-finish-load', () => {
-        $.get('../../js/index/webviewResources/newsWebView/afterLoad.js', (text) => {
+        $.get(jsPath('/index/webviewResources/newsWebView/afterLoad.js'), (text) => {
           n.executeJavaScript(text, false, () => {
-            // console.log("load finished");
           });
         });
       });
