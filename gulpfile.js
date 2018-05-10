@@ -5,10 +5,11 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const routes = require('./router.js').routes;
 const webpackConfig = require('./webpack.config.js');
+const {copyChain, jsChain} = require('./gulpChain.json');
 
 gulp.task('make_bundle', () => {
-  for(var i = 0; i < routes.length; i++){
-    webpackStream(webpackConfig.config(routes[i]), webpack)
+  for(var i = 0; i < jsChain.length; i++){
+    webpackStream(webpackConfig.config(jsChain[i]), webpack)
     .pipe(gulp.dest('./dist/bundles'));
   }
 });
@@ -22,14 +23,10 @@ gulp.task('pug_compile', () => {
 });
 
 gulp.task('asset_copy', () => {
-  gulp.src(['src/assets/javascript/node_dependencies.js'], {base: 'src/assets/javascript'})
-  .pipe(gulp.dest('./dist/js'));
-  gulp.src(['src/assets/javascript/index/webviewResources/addWebView/*'], {base: 'src/assets/javascript/index/webviewResources/addWebView'})
-  .pipe(gulp.dest('./dist/js/index/webviewResources/addWebView'));
-  gulp.src(['src/assets/javascript/index/webviewResources/newsWebView/*'], {base: 'src/assets/javascript/index/webviewResources/newsWebView'})
-  .pipe(gulp.dest('./dist/js/index/webviewResources/newsWebView'));
-  gulp.src(['src/assets/images/*'], {base: 'src/assets/images'})
-  .pipe(gulp.dest('./dist/images'));
+  copyChain.forEach((v) => {
+    gulp.src([v.src], {base: v.base})
+    .pipe(gulp.dest(v.dest));
+  });
 });
 
 gulp.task('build_dist', () => {

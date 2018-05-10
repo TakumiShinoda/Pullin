@@ -1,5 +1,4 @@
 module.exports = {
-  routes: ['index'],
   methods:{
     cur_view: () => {
       var url = location.pathname;

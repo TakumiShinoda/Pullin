@@ -1,0 +1,27 @@
+{
+  "copyChain": [
+    {
+      "src": "src/assets/javascript/node_dependencies.js",
+      "base": "src/assets/javascript",
+      "dest": "./dist/js"
+    },
+    {
+      "src": "src/assets/javascript/index/webviewResources/addWebView/*",
+      "dase": "src/assets/javascript/index/webviewResources/addWebView",
+      "dest": "./dist/js/index/webviewResources/addWebView"
+    },
+    {
+      "src": "src/assets/javascript/index/webviewResources/newsWebView/*",
+      "base": "src/assets/javascript/index/webviewResources/newsWebView",
+      "dest": "./dist/js/index/webviewResources/newsWebView"
+    },
+    {
+      "src": "src/assets/images/*",
+      "base": "src/assets/images",
+      "dest": "./dist/images"
+    }
+  ],
+  "jsChain": [
+    "index"
+  ]
+}
