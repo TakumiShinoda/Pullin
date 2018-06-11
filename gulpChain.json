@@ -6,14 +6,9 @@
       "dest": "./dist/js"
     },
     {
-      "src": "src/assets/javascript/index/webviewResources/addWebView/*",
-      "dase": "src/assets/javascript/index/webviewResources/addWebView",
-      "dest": "./dist/js/index/webviewResources/addWebView"
-    },
-    {
-      "src": "src/assets/javascript/index/webviewResources/newsWebView/*",
-      "base": "src/assets/javascript/index/webviewResources/newsWebView",
-      "dest": "./dist/js/index/webviewResources/newsWebView"
+      "src": "src/assets/javascript/index/webviewResources/**",
+      "dase": "src/assets/javascript/index/webviewResources/",
+      "dest": "./dist/js/index/webviewResources"
     },
     {
       "src": "src/assets/images/*",
