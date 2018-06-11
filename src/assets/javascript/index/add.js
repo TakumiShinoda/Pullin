@@ -11,7 +11,7 @@ $(document).ready(() => {
   webview.openDevTools();
 
   webview.addEventListener('dom-ready', () => {
-    $.get(jsPath('/index/webviewResources/addWebView/beforeLoad.js'), (text) => {
+    $.get(distPath.js('/index/webviewResources/addWebView/beforeLoad.js'), (text) => {
       webview.executeJavaScript(text, false, () => {
         console.log("before load");
       });
@@ -19,7 +19,7 @@ $(document).ready(() => {
   });
 
   webview.addEventListener('did-finish-load', () => {
-    $.get(jsPath('/index/webviewResources/addWebView/afterLoad.js'), (text) => {
+    $.get(distPath.js('/index/webviewResources/addWebView/afterLoad.js'), (text) => {
       webview.executeJavaScript(text, false, () => {
         console.log("load finished");
       });
