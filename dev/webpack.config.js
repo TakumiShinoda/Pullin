@@ -1,9 +1,10 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const {srcPath} = require('./path');
 
 module.exports = {
   config: (routes) => {
     return {
-      entry: "./src/assets/javascript/"+ routes +"/"+ routes +".entry.js",
+      entry: srcPath.entries('/' + routes + '.entry.js'),
       output: {
         filename: routes + ".js"
       },

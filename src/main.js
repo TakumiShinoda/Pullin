@@ -2,6 +2,7 @@ const {app, BrowserWindow} = require('electron');
 const path = require('path');
 const fs = require('fs');
 const storage = require('electron-json-storage');
+const {distPath} = require('../dev/path');
 
 let pluginName
 let histories = {
@@ -48,5 +49,6 @@ app.on('ready', () => {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
-  mainWindow.loadURL('file://' + __dirname + '/dist/views/index/index.html');
+
+  mainWindow.loadURL('file://' + distPath.views('/index/index.html'));
 });

@@ -16,7 +16,7 @@
       "dest": "./dist/images"
     }
   ],
-  "jsChain": [
+  "routes": [
     "index"
   ]
 }
